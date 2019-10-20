@@ -21,6 +21,8 @@ object Practice {
       .on(Image.square(300).fillColor(Color.yellow))
 
 
+
+
   val image2 =
     Image
       .triangle(10,30)
@@ -58,6 +60,17 @@ val image4 =
       }
 
   val frame = Frame.size(600, 600)
+
+  def sierpinski(count: Int): Image = {
+    val triangle = Image.triangle(10, 10) strokeColor Color.magenta
+    count match {
+      case 0 => triangle above (triangle beside triangle)
+      case n =>
+        val unit = sierpinski(n-1)
+        unit above (unit beside unit)
+    }
+  }
+
 
 
   def main(args: Array[String]): Unit = {
