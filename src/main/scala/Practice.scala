@@ -1,4 +1,5 @@
 import doodle.core._
+import doodle.image.Image.Elements.Beside
 import doodle.image._
 import doodle.image.syntax._
 import doodle.image.syntax.core._
@@ -14,10 +15,35 @@ import scala.concurrent.duration._
 object Practice {
   val image =
     Image
-      .circle(10)
-      .fillColor(Color.green)
-      .on(Image.circle(20).fillColor(Color.deepPink))
-      .on(Image.circle(30).fillColor(Color.steelBlue))
+      .square(10)
+      .fillColor(Color.purple)
+      .on(Image.square(200).fillColor(Color.deepPink))
+      .on(Image.square(300).fillColor(Color.yellow))
+
+
+  val image2 =
+    Image
+      .triangle(10,30)
+      .fillColor(Color.teal)
+      .on(Image.triangle(200,100).fillColor(Color.deepPink))
+      .on(Image.triangle(300,100).fillColor(Color.yellow))
+  val image3=
+    Image.circle(20)
+    .fillColor(Color.deepPink)
+    .on(Image.circle(20).fillColor(Color.white))
+    .on(Image.circle(30).fillColor(Color.deepPink))
+    .on(Image.circle(50).fillColor(Color.maroon))
+
+
+
+val image4 =
+  Image.square(20)
+  .fillColor(Color.white)
+  .on(Image.square(20).fillColor(Color.teal))
+  .on(Image.square(100).fillColor((Color.yellow)))
+  .on(Image.square(200).fillColor(Color.peru))
+
+
 
   val animation =
     Reactor
@@ -35,9 +61,19 @@ object Practice {
 
 
   def main(args: Array[String]): Unit = {
-    image.draw()
+    image3.draw()
+//image.above(image2)draw()
+//image2.above(image3)draw()
+image4.draw()
+
 
     // Comment out the above and uncomment the below to display the animation
     // animation.run(frame)
+    println(1 + 3)
+    println(1.min(3))
+    println(1+43/2)
+    println("hi" ++ "I am Dee")
+
   }
 }
+
